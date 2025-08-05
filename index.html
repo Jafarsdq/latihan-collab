@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Umroh Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    padding-top: 70px;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('img/hero.jpg') center center/cover no-repeat;
+    height: 100vh;
+    color: white;
+}
+
+#juli-carousel img {
+    width: 200px;
+    height: auto;
+}
+
+    </style>
 </head>
 <body>
-    
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="#">Umrohku</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Paket</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Haji</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Peringatan</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Pembimbing</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero d-flex align-items-center">
+    <div class="container text-center text-white">
+        <h1 class="mb-3">MERAIH IBADAH MERANGKAI UKHWAH</h1>
+        <p>Membentuk kualitas & pelayanan untuk kenyamanan ibadah anda</p>
+        <a href="#" class="btn btn-warning">Hubungi Kami</a>
+    </div>
+</section>
+
+<!-- Paket Juli -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-start text-warning mb-4">PAKET JULI</h2>
+        <div class="d-flex align-items-center">
+            <button class="btn btn-outline-warning me-2" onclick="prevSlide('juli')">‹</button>
+            <div class="d-flex overflow-auto gap-3 flex-nowrap" id="juli-carousel">
+                <img src="img/juli1.jpg" alt="Reguler" class="img-fluid rounded shadow">
+                <img src="img/juli2.jpg" alt="Cermat" class="img-fluid rounded shadow">
+                <img src="img/juli3.jpg" alt="Promo" class="img-fluid rounded shadow">
+            </div>
+            <button class="btn btn-outline-warning ms-2" onclick="nextSlide('juli')">›</button>
+        </div>
+    </div>
+</section>
+
+<!-- Most Recent -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-start text-warning mb-4">MOST RECENT</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h5>JUNI</h5>
+                <img src="img/juni.jpg" class="img-fluid rounded shadow" alt="Juni">
+            </div>
+            <div class="col-md-4">
+                <h5>JULI</h5>
+                <img src="img/juli-spesial.jpg" class="img-fluid rounded shadow" alt="Juli">
+            </div>
+            <div class="col-md-4">
+                <h5>AGUSTUS</h5>
+                <img src="img/agustus.jpg" class="img-fluid rounded shadow" alt="Agustus">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function nextSlide(id) {
+    const carousel = document.getElementById(`${id}-carousel`);
+    carousel.scrollLeft += 300;
+}
+
+function prevSlide(id) {
+    const carousel = document.getElementById(`${id}-carousel`);
+    carousel.scrollLeft -= 300;
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
